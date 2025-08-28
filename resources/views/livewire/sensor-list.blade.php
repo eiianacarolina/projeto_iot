@@ -29,14 +29,19 @@
                         <td>{{ $s->descricao }}</td>
                         <td>{{ $s->status }}</td>
                         <td>
-                            <a href="{{ route('sensor.edit', $s->id) }}"
-                                class="btn btn-warning me-1" data-bs-toggle="tooltip" title="Editar">Editar
+                            <a href="{{ route('sensor.edit', $s->id) }}" class="btn btn-warning me-1"
+                                data-bs-toggle="tooltip" title="Editar">Editar
                             </a>
+
+                            <button wire:click="delete({{ $s->id }})" class="btn btn-sm btn-outline-danger me-1"
+                                title="Excluir" wire:confirm="Tem certeza?">
+                                <i class="bi bi-trash"></i>
+                            </button>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-
+    {{ $sensor->links() }}
 </div>

@@ -8,11 +8,13 @@ use Livewire\Component;
 
 class SensorEdit extends Component
 {
-     public $ambiente_id, $codigo, $tipo, $descricao, $status;
+     public $ambiente_id, $codigo, $tipo, $descricao, $status, $sensorId;
 
-    protected $rules = [
-        'codigo' => 'unique:sensors,codigo',
-    ];
+    protected function rules() {
+        return[
+        'codigo' => 'unique:sensors,codigo,' . $this->sensorId
+        ];
+   }
 
     protected $messages = [
         'codigo.unique' => 'O campo é único',
@@ -26,18 +28,19 @@ class SensorEdit extends Component
             return redirect()->route('sensor.list');
         }
 
-        $this->ambiente_id = $this->ambiente_id;
-        $this->codigo = $this->codigo;
-        $this->tipo= $this->tipo;
-        $this->descricao = $this->descricao;
-        $this->status= $this->status;
+        $this->sensorId = $sensor->id;
+        $this->ambiente_id = $sensor->ambiente_id;
+        $this->codigo = $sensor->codigo;
+        $this->tipo= $sensor->tipo;
+        $this->descricao = $sensor->descricao;
+        $this->status= $sensor->status;
     }
 
     public function salvar(){
 
         $this->validate();
 
-        $sensor = Sensor::find($this->sensor_id);
+        $sensor = Sensor::find($this->sensorId);
 
         $sensor->update([
             'ambiente_id' => $this->ambiente_id,

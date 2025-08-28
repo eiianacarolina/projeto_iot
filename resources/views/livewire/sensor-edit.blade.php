@@ -7,6 +7,7 @@
                 </div>
                 <div class="card-body">
                     <form wire:submit.prevent="salvar">
+                        <div class="mb-3">
                         <label for="ambiente_id" class="form-label">Ambiente</label>
                         <select class="form-select" aria-label="Default select example" wire:model.defer='ambiente_id' id="ambiente_id">
                             <option selected>Ambiente</option>
@@ -14,6 +15,7 @@
                                 <option value="{{ $a->id }}">{{ $a->nome }}</option>
                             @endforeach
                         </select>
+                        </div>
                         @error('ambiente_id')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

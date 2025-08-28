@@ -18,7 +18,7 @@ class SensorList extends Component
     public function render()
     {
         $sensor = Sensor::all();
-        $sensor = Sensor::where('ambiente_id', 'like', "%{$this->search}%")
+        $sensor = Sensor::where('codigo', 'like', "%{$this->search}%")
         ->paginate($this->perPage);
 
         return view('livewire.sensor-list', compact('sensor'));

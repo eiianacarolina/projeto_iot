@@ -28,7 +28,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ambiente as $a)
+                        @foreach ($ambientes as $a)
                             <tr>
                                 <td>{{ $a->nome }}</td>
                                 <td>{{ $a->descricao }}</td>
@@ -49,7 +49,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $ambiente->links() }}
+            {{ $ambientes->links() }}
         </div>
     </div>
 </div>

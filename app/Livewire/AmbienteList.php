@@ -17,11 +17,9 @@ class AmbienteList extends Component
 
     public function render()
     {
-        $ambiente = Ambiente::all();
-        $ambiente = Ambiente::where('nome', 'like', "%{$this->search}%")
-        ->paginate($this->perPage);
+        $ambientes = Ambiente::where('nome', 'like', "%{$this->search}%")->paginate($this->perPage);
 
-        return view('livewire.ambiente-list', compact('ambiente'));
+        return view('livewire.ambiente-list', compact('ambientes'));
     }
 
      public function delete($id)

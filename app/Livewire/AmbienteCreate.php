@@ -9,6 +9,16 @@ class AmbienteCreate extends Component
 {
     public $nome, $descricao, $status;
 
+    protected $rules = [
+        'nome'=> 'required',
+        'descricao' => 'required',
+    ];
+
+    protected $messages = [
+        'nome.required' => 'O campo é obrigatório',
+        'descricao.required' => 'O campo é obrigatório'
+    ];
+
     public function store()
     {
         Ambiente::create([

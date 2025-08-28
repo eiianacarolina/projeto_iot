@@ -21,7 +21,7 @@
                             <input class="form-check-input" type="checkbox" role="switch" id="status" wire:model.defer="status">
                             <label class="form-check-label" for="status">Status do ambiente</label>
                         </div>
-                        <input class="btn btn-danger mt-2" type="submit" value="Submit">
+                        <input class="btn btn-danger mt-2" type="submit" value="Editar">
                     </form>
                 </div>
             </div>

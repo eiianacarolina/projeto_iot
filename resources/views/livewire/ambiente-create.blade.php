@@ -12,16 +12,25 @@
                             <input type="text" class="form-control" id="nome" wire:model.defer="nome"
                                 placeholder="Sala, biblioteca...">
                         </div>
+                        @error('nome')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="mb-3">
                             <label for="descricao" class="form-label">Descrição</label>
                             <input type="text" class="form-control" id="descricao" wire:model.defer="descricao"
                                 placeholder="digite aqui...">
                         </div>
+                        @error('descricao')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="status" wire:model.defer="status">
                             <label class="form-check-label" for="status">Status do ambiente</label>
                         </div>
-                        <input class="btn btn-danger mt-2" type="submit" value="Submit">
+                        @error('status')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        <input class="btn btn-danger mt-2" type="submit" value="Cadastrar">
                     </form>
                 </div>
             </div>

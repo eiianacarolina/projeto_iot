@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\RegistroController;
+use GuzzleHttp\Promise\Create;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::post('cadastros', [RegistroController::class, 'Store']);

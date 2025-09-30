@@ -12,12 +12,13 @@ class SensorEdit extends Component
 
     protected function rules() {
         return[
-        'codigo' => 'unique:sensors,codigo,' . $this->sensorId
+        'codigo' => 'required|unique:sensors,codigo,' . $this->sensorId
         ];
    }
 
     protected $messages = [
         'codigo.unique' => 'O campo é único',
+        'codigo.required' => 'O campo é obrigatório'
     ];
 
     public function mount($id)

@@ -37,7 +37,7 @@
                                 <td>{{ $s->codigo }}</td>
                                 <td>{{ $s->tipo }}</td>
                                 <td>{{ $s->descricao }}</td>
-                                <td>{{ $s->status }}</td>
+                                <td>{{ $s->status == 1 ? 'Ativo' : 'Inativo' }}</td>
                                 <td>
                                     <a href="{{ route('sensor.edit', $s->id) }}" class="btn btn-warning me-1"
                                         data-bs-toggle="tooltip" title="Editar">Editar

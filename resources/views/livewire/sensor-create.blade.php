@@ -9,9 +9,8 @@
                     <form wire:submit.prevent="store">
                         <div class="mb-3">
                             <label for="ambiente_id" class="form-label">Ambiente</label>
-                            <select class="form-select" aria-label="Default select example"
-                                wire:model.defer='ambiente_id' id="ambiente_id">
-                                <option selected>Ambiente</option>
+                            <select class="form-select" wire:model.defer='ambiente_id' id="ambiente_id">
+
                                 @foreach ($ambientes as $a)
                                     <option value="{{ $a->id }}">{{ $a->nome }}</option>
                                 @endforeach

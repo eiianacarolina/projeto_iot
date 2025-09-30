@@ -33,6 +33,7 @@ class AmbienteEdit extends Component
             'descricao' => $this->descricao,
             'status' => $this->status
         ]);
+        $ambiente->save();
 
         return redirect()->route('ambiente.list');
     }

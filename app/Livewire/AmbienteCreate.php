@@ -21,6 +21,8 @@ class AmbienteCreate extends Component
 
     public function store()
     {
+        $this->validate();
+
         Ambiente::create([
             'nome'=> $this->nome,
             'descricao' => $this->descricao,

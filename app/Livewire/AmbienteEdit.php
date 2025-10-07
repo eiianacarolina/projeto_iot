@@ -20,7 +20,7 @@ class AmbienteEdit extends Component
         $this->ambienteId = $ambiente->id;
         $this->nome = $ambiente->nome;
         $this->descricao = $ambiente->descricao;
-        $this->status = $ambiente->status;
+        $this->status = (bool) $ambiente->status;
     }
 
     //gravar no banco

@@ -2,19 +2,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-lg border-light rounded">
-                <div class="card-header text-center fw-bold text-danger mb-1">
+                <div class="card-header text-center fw-bold text-primary mb-1">
                     <h4>Edição de Sensores</h4>
                 </div>
                 <div class="card-body">
                     <form wire:submit.prevent="salvar">
                         <div class="mb-3">
-                        <label for="ambiente_id" class="form-label">Ambiente</label>
-                        <select class="form-select" aria-label="Default select example" wire:model.defer='ambiente_id' id="ambiente_id">
-                            <option selected>Ambiente</option>
-                            @foreach ($ambientes as $a)
-                                <option value="{{ $a->id }}">{{ $a->nome }}</option>
-                            @endforeach
-                        </select>
+                            <label for="ambiente_id" class="form-label">Ambiente</label>
+                            <select class="form-select" aria-label="Default select example"
+                                wire:model.defer='ambiente_id' id="ambiente_id">
+                                <option selected>Ambiente</option>
+                                @foreach ($ambientes as $a)
+                                    <option value="{{ $a->id }}">{{ $a->nome }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         @error('ambiente_id')
                             <span class="text-danger">{{ $message }}</span>
@@ -48,8 +49,10 @@
                                 wire:model.defer="status">
                             <label class="form-check-label" for="status">Status do ambiente</label>
                         </div>
-                        <a href="{{ route('sensor.list') }}"><input class="btn btn-danger mt-2" type="submit"
+                        <a href="{{ route('sensor.list') }}"><input class="btn btn-primary mt-2" type="submit"
                                 value="Salvar"></a>
+                        <a href="{{ route('sensor.list') }}"><input class="btn btn-secondary mt-2" type="button"
+                                value="Cancelar"></a>
                     </form>
                 </div>
             </div>

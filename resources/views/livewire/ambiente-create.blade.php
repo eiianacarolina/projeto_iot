@@ -30,7 +30,10 @@
                         @error('status')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                        <input class="btn btn-danger mt-2" type="submit" value="Cadastrar">
+                        <a href="{{ route('ambiente.list') }}"><input class="btn btn-primary mt-2" type="submit"
+                                value="Cadastrar"></a>
+                        <a href="{{ route('ambiente.list') }}"><input class="btn btn-secondary mt-2" type="button"
+                                value="Cancelar"></a>
                     </form>
                 </div>
             </div>

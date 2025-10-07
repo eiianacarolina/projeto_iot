@@ -1,6 +1,9 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="col-12">
+            <div class="col-8">
+            <h2 class="fw-bold text-primary mb-4">Registros</h2>
+        </div>
             <div class="input-group rounded shadow-sm">
                 <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
                 <input type="text" wire:model.live="search" class="form-control border-start-0"

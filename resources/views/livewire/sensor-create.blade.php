@@ -10,6 +10,7 @@
                         <div class="mb-3">
                             <label for="ambiente_id" class="form-label">Ambiente</label>
                             <select class="form-select" wire:model.defer='ambiente_id' id="ambiente_id">
+                                 <option selected>Selecione o ambiente</option>
 
                                 @foreach ($ambientes as $a)
                                     <option value="{{ $a->id }}">{{ $a->nome }}</option>
@@ -50,6 +51,8 @@
                         </div>
                         <a href="{{ route('sensor.list') }}"><input class="btn btn-danger mt-2" type="submit"
                                 value="Cadastrar"></a>
+                        <a href="{{ route('sensor.list') }}"><input class="btn btn-secondary mt-2" type="button"
+                                value="Cancelar"></a>
                     </form>
                 </div>
             </div>

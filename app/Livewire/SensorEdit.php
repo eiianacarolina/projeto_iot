@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class SensorEdit extends Component
 {
-     public $ambiente_id, $codigo, $tipo, $descricao, $status, $sensorId;
+    public $ambiente_id, $codigo, $tipo, $descricao, $status, $sensorId;
 
     protected function rules() {
         return[
@@ -34,7 +34,8 @@ class SensorEdit extends Component
         $this->codigo = $sensor->codigo;
         $this->tipo= $sensor->tipo;
         $this->descricao = $sensor->descricao;
-        $this->status= $sensor->status;
+        $this->status = (bool) $sensor->status;
+        
     }
 
     public function salvar(){

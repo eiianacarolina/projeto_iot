@@ -7,7 +7,8 @@ use Livewire\Component;
 
 class AmbienteCreate extends Component
 {
-    public $nome, $descricao, $status;
+    public $nome, $descricao;
+     public $status = false;
 
     protected $rules = [
         'nome'=> 'required',

@@ -8,6 +8,7 @@ use App\Livewire\Registro\RegistroList;
 use App\Livewire\AmbienteCreate;
 use App\Livewire\AmbienteEdit;
 use App\Livewire\AmbienteList;
+use App\Livewire\ControleLed;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/ambiente/list', AmbienteList::class)->name('ambiente.list');
@@ -21,3 +22,5 @@ Route::get('/sensor/create', SensorCreate::class)->name('sensor.create');
 Route::get('/sensor/edit/{id}', SensorEdit::class)->name('sensor.edit');
 
 Route::get('/registro/list', RegistroList::class);
+
+Route::get('/controle/led', ControleLed::class)->name('controle.list');

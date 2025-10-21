@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SensorController;
 use App\Livewire\Dashboard;
 use App\Livewire\SensorCreate;
 use App\Livewire\SensorEdit;

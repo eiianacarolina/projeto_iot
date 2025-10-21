@@ -11,6 +11,6 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/registro', [RegistroController::class, 'store']);
 
-Route::post('/sensor/findbycod', [SensorController::class, 'findByCod']);
+Route::get('/sensor/findbycod/{codigo}', [SensorController::class, 'findByCod']);
 
-Route::put('/sensor/update', [SensorController::class, 'update']);
+Route::put('/sensor/update/{codigo}', [SensorController::class, 'update']);
